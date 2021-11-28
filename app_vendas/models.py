@@ -28,7 +28,7 @@ class Produto(models.Model):
 class Venda(models.Model):
     cod_venda = models.IntegerField(primary_key=True, blank=True)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    produtos = models.OneToOneField('Produto', on_delete=models.CASCADE)
+    produtos = models.ForeignKey(Produto, on_delete=models.CASCADE)
     observacao = models.TextField(default=None, blank=True)
 
     class TipoPagamento(models.TextChoices):

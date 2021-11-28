@@ -5,7 +5,7 @@ from .models import Venda, Cliente, Produto
 class VendaForm(ModelForm):
     class Meta:
         model = Venda
-        fields = ['cliente', 'produtos', 'observacao']
+        fields = ['cod_venda', 'cliente', 'produtos', 'observacao']
 
 
 class ClienteForm(ModelForm):
@@ -13,8 +13,8 @@ class ClienteForm(ModelForm):
         model = Cliente
         fields = ['nome', 'endereco', 'email', 'whats', 'telefone']
 
-
 class ProdutoForm(ModelForm):
     class Meta:
         model = Produto
         fields = ['titulo', 'descricao_produto', 'preco']
+
