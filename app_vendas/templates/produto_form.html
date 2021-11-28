@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BRen">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,13 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-<div class="corpo">
-    <div class="bem_vindo">
-    <h1>Seja Bem vindo</h1>
-    </div>
-    <div class="botoes">
+<form method="POST">
+        {% csrf_token %}
+        {{ produto.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
 
-    </div>
-</div>
 </body>
 </html>

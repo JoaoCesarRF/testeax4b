@@ -8,13 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-<div class="corpo">
-    <div class="bem_vindo">
-    <h1>Seja Bem vindo</h1>
-    </div>
-    <div class="botoes">
-
-    </div>
-</div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ venda.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
 </body>
 </html>
