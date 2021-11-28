@@ -26,9 +26,10 @@
 <h3>Vendas</h3>
 <ul>
     {% for venda in vendas %}
-    <li>cod-{{ venda.cod_venda }}     <b>{{ venda.produtos }} </b></li>
+    <li>cod-{{ venda.cod_venda }}     <b>{{ venda.produtos }} </b> {{ venda.tipo_pagamento }}
+    {{ venda.produtos.preco }}</li>
     {% endfor %}
 
 </ul>
 </body>
-</html>
+</html>-+

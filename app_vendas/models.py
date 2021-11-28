@@ -26,15 +26,15 @@ class Produto(models.Model):
 
 
 class Venda(models.Model):
-    cod_venda = models.IntegerField(primary_key=True, blank=True)
+    cod_venda = models.IntegerField(primary_key=True , blank=True, auto_created=True)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    produtos = models.ForeignKey(Produto, on_delete=models.CASCADE)
+    produtos = models.ForeignKey(Produto, default=0, blank=True, on_delete=models.CASCADE)
     observacao = models.TextField(default=None, blank=True)
 
     class TipoPagamento(models.TextChoices):
-        visa = 'VIsa', 'Visa'
-        boleto = 'Boleto', 'Boleto'
-        master = 'Mastercard', 'Mastercard'
+        visa = 'Visa'
+        boleto = 'Boleto'
+        master = 'Mastercard'
 
     tipo_pagamento = models.CharField(max_length=10, choices=TipoPagamento.choices, default='Visa',
                                       verbose_name='Meio de Pagamento')

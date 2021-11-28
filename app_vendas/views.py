@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .form import VendaForm, ClienteForm, ProdutoForm
 from .models import Venda, Cliente, Produto
 
+
 def home(request):
     return render(request, 'home.html')
 
@@ -11,7 +12,7 @@ def dashboard(request):
     dados = {}
     dados['vendas'] = Venda.objects.all()
     return render(request, 'dashboard.html', dados)
-
+# criar dashboard de cleintes e Produtos
 
 
 def nova_venda(request):
