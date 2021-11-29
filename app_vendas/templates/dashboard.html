@@ -16,9 +16,9 @@
 <body>
 <div class="topnav">
   <a href="/">Home</a>
-  <a href="nova_venda">Nova Venda</a>
-  <a href="cadastro_cliente">Cadastrar Cliente</a>
-  <a href="cadastro_produto">Cadastrar Produto</a>
+  <a href="{% url 'nova_venda' %}">Nova Venda</a>
+  <a href="{% url 'cad_cliente' %}">Cadastrar Cliente</a>
+  <a href="{% url 'cad_prod' %}">Cadastrar Produto</a>
 
 </div>
 <h1>Dashboard</h1>
@@ -26,7 +26,7 @@
 <h3>Vendas</h3>
 <ul>
     {% for venda in vendas %}
-    <li>cod-{{ venda.cod_venda }}     <b>{{ venda.produtos }} </b> {{ venda.tipo_pagamento }}
+    <li><a href="{% url 'update' venda.cod_venda %}"> cod-{{ venda.cod_venda }} </a>    <b>{{ venda.produtos }} </b> {{ venda.tipo_pagamento }}
     {{ venda.produtos.preco }}</li>
     {% endfor %}
 
