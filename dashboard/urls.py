@@ -30,5 +30,7 @@ urlpatterns = [
     path('update/<int:pk>/', vendas_update, name='update'),
     path('delete/<int:pk>/', vendas_delete, name='delete'),
     path('clientes_update/<int:pk>/', clientes_update, name='clientes_update'),
+    path('clientes_delete/<int:pk>/', clientes_delete, name='clientes_delete'),
     path('produtos_update/<int:pk>/', produtos_update, name='produtos_update'),
+    path('produtos_delete/<int:pk>/', produtos_delete, name='produtos_delete'),
 ]

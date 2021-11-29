@@ -63,10 +63,17 @@ def clientes_update(request, pk):
     cliente_dados = Cliente.objects.get(pk=pk)
     cliente = ClienteForm(request.POST or None, instance=cliente_dados)
     dados['cliente'] = cliente
+    dados['cliente_dados'] = cliente_dados
     if cliente.is_valid():
         cliente.save()
         return redirect('dashboard')
     return render(request, 'cliente_form.html', dados)
+
+
+def clientes_delete(request, pk):
+    cliente_dados = Cliente.objects.get(pk=pk)
+    cliente_dados.delete()
+    return redirect('dashboard_clientes')
 
 
 def cadastro_produto(request):
@@ -89,7 +96,14 @@ def produtos_update(request, pk):
     produto_dados = Produto.objects.get(pk=pk)
     produto = ProdutoForm(request.POST or None, instance=produto_dados)
     dados['produto'] = produto
+    dados['produto_dados'] = produto_dados
     if produto.is_valid():
         produto.save()
         return redirect('dashboard')
     return render(request, 'produto_form.html', dados)
+
+
+def produtos_delete(request, pk):
+    produto_dados = Produto.objects.get(pk=pk)
+    produto_dados.delete()
+    return redirect('dashboard_produtos')
