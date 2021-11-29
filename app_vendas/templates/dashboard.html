@@ -1,17 +1,13 @@
 <!doctype html>
+{% load static %}
 <html lang="ept-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>
-        .topnav {
-        background-color: gray;
-        text-color: white;
-        }
-    </style>
-    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'app_vendas/css/mystyle.css' %}">
+    <title>Dashboard Vendas</title>
 </head>
 <body>
 <div class="topnav">
@@ -20,6 +16,7 @@
   <a href="{% url 'cad_cliente' %}">Cadastrar Cliente</a>
   <a href="{% url 'dashboard_clientes' %}">Listar Clientes</a>
   <a href="{% url 'cad_prod' %}">Cadastrar Produto</a>
+  <a href="{% url 'dashboard_produtos' %}">Listar Produtos</a>
 
 </div>
 <h1>Dashboard</h1>

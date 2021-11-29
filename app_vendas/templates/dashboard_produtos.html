@@ -7,7 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'app_vendas/css/mystyle.css' %}">
-    <title>Dashboard Clientes</title>
+    <title>Dashboard Produtos</title>
 </head>
 <body class="pagina">
 <div class="topnav">
@@ -20,12 +20,12 @@
 <div class="corpo">
 <h1>Dashboard</h1>
 
-<h3>Clientes</h3>
+<h3>Produtos</h3>
 <ul>
-    {% for cliente in clientes %}
-    <li><a href="{% url 'clientes_update' cliente.cod_cliente %}"> cod-{{ cliente.cod_cliente }} </a>
-         -  {{ cliente.nome }}  <b>{{ cliente.endereco }}
-    </b> {{ cliente.email }} -  {{ cliente.telefone }}</li>
+    {% for produto in produtos %}
+    <li><a href="{% url 'produtos_update' produto.cod_produto %}"> cod-{{ produto.cod_produto }} </a>
+         -  {{ produto.titulo }}  <b>{{ produto.preco }}
+    </b></li>
     {% endfor %}
 
 </ul>

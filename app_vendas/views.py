@@ -71,3 +71,19 @@ def cadastro_produto(request):
         produto.save()
         return redirect('dashboard')
     return render(request, 'produto_form.html', dados)
+
+
+def dashboard_produtos(request):
+    dados = {}
+    dados['produtos'] = Produto.objects.all()
+    return render(request, 'dashboard_produtos.html', dados)
+
+def produtos_update(request, pk):
+    dados = {}
+    produto_dados = Produto.objects.get(pk=pk)
+    produto = ProdutoForm(request.POST or None, instance=produto_dados)
+    dados['produto'] = produto
+    if produto.is_valid():
+        produto.save()
+        return redirect('dashboard')
+    return render(request, 'produto_form.html', dados)
