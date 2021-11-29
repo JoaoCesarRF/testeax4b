@@ -11,7 +11,7 @@ class VendaForm(ModelForm):
 class ClienteForm(ModelForm):
     class Meta:
         model = Cliente
-        fields = ['nome', 'endereco', 'email', 'whats', 'telefone']
+        fields = ['cod_cliente','nome', 'endereco', 'email', 'whats', 'telefone']
 
 class ProdutoForm(ModelForm):
     class Meta:

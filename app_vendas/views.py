@@ -47,6 +47,22 @@ def cadastro_cliente(request):
     return render(request, 'cliente_form.html', dados)
 
 
+def dashboard_clientes(request):
+    dados = {}
+    dados['clientes'] = Cliente.objects.all()
+    return render(request, 'dashboard_clientes.html', dados)
+
+def clientes_update(request, pk):
+    dados = {}
+    cliente_dados = Cliente.objects.get(pk=pk)
+    cliente = ClienteForm(request.POST or None, instance=cliente_dados)
+    dados['cliente'] = cliente
+    if cliente.is_valid():
+        cliente.save()
+        return redirect('dashboard')
+    return render(request, 'cliente_form.html', dados)
+
+
 def cadastro_produto(request):
     dados = {}
     produto = ProdutoForm(request.POST or None)
