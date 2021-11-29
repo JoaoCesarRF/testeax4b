@@ -12,6 +12,9 @@
         {% csrf_token %}
         {{ venda.as_p }}
         <button type="submit">Salvar</button>
+        {% if venda_dados %}
+            <button type="submit"><a href="{% url 'delete' venda_dados.cod_venda %}">Remover</a></button>
+        {% endif %}
     </form>
 </body>
 </html>

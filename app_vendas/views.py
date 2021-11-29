@@ -21,11 +21,17 @@ def vendas_update(request, pk):
     venda_dados = Venda.objects.get(pk=pk)
     venda = VendaForm(request.POST or None, instance=venda_dados)
     dados['venda'] = venda
+    dados['venda_dados'] = venda_dados
     if venda.is_valid():
         venda.save()
         return redirect('dashboard')
     return render(request, 'venda_form.html', dados)
 
+
+def vendas_delete(request, pk):
+    venda_dados = Venda.objects.get(pk=pk)
+    venda_dados.delete()
+    return redirect('dashboard')
 
 def nova_venda(request):
     dados = {}

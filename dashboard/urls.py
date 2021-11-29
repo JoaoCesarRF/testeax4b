@@ -28,6 +28,7 @@ urlpatterns = [
     path('dashboard_clientes', dashboard_clientes, name='dashboard_clientes'),
     path('dashboard_produtos', dashboard_produtos, name='dashboard_produtos'),
     path('update/<int:pk>/', vendas_update, name='update'),
+    path('delete/<int:pk>/', vendas_delete, name='delete'),
     path('clientes_update/<int:pk>/', clientes_update, name='clientes_update'),
     path('produtos_update/<int:pk>/', produtos_update, name='produtos_update'),
 ]
