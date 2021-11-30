@@ -1,20 +1,25 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://jcrf.tech/css/mystyle.css">
+    <title>Cadastrar Cliente</title>
 </head>
-<body>
-    <form method="POST">
+<body class="pagina">
+
+    <div class="formulario">
+        <form method="POST">
         {% csrf_token %}
         {{ cliente.as_p }}
         <button type="submit">Salvar</button>
         {% if cliente_dados %}
             <button type="submit"><a href="{% url 'clientes_delete' cliente_dados.cod_cliente %}">Remover</a></button>
         {% endif %}
-    </form>
+        </form>
+    </div>
+
 </body>
 </html>

@@ -5,9 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://jcrf.tech/css/mystyle.css">
     <title>Document</title>
 </head>
-<body>
+<body class="pagina">
+<div class="formulario">
 <form method="POST">
         {% csrf_token %}
         {{ produto.as_p }}
@@ -16,6 +18,6 @@
             <button type="submit"><a href="{% url 'produtos_delete' produto_dados.cod_produto %}">Remover</a></button>
         {% endif %}
     </form>
-
+</div>
 </body>
 </html>
