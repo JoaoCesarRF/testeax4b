@@ -8,7 +8,7 @@ django = "*"
 gunicorn = "*"
 python-decouple = "*"
 django-s3-folder-storage = "*"
-collectfast = "*"
+collectfast = 2.2.0
 
 [dev-packages]
 
