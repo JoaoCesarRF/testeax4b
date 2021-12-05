@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6d644caca465f426477c095891f07ce3819900cae7aaa8e51381cb8ad2703613"
+            "sha256": "883e15d8358e1d649f47cc5be186d668588064984142d03c8af99fbd049d6b07"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -39,14 +39,6 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==1.23.20"
-        },
-        "collectfast": {
-            "hashes": [
-                "sha256:2f6abc8cab7ec5114a7a9a3660ab629ec142556957220aa82857dc9b4381490d",
-                "sha256:e716b2234ab50b5f1010b0d78c3fae8c6aebdb8b7c66ef5568503c33c1a5e19a"
-            ],
-            "index": "pypi",
-            "version": "==2.2.0"
         },
         "django": {
             "hashes": [
@@ -141,14 +133,6 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==0.4.2"
-        },
-        "typing-extensions": {
-            "hashes": [
-                "sha256:4ca091dea149f945ec56afb48dae714f21e8692ef22a395223bcd328961b6a0e",
-                "sha256:7f001e5ac290a0c0401508864c7ec868be4e701886d5b573a9528ed3973d9d3b"
-            ],
-            "markers": "python_version >= '3.6'",
-            "version": "==4.0.1"
         },
         "urllib3": {
             "hashes": [
