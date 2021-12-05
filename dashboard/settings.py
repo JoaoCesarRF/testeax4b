@@ -128,7 +128,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
-COLLECTFAST_ENABLE = False
+COLLECTFAST_ENABLED = False
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -146,7 +146,7 @@ if AWS_ACCESS_KEY_ID:
     AWS_QUERYSTRING_AUTH = True
     AWS_S3_CUSTOM_DOMAIN = None
     AWS_DEFAULT_ACL = 'private'
-    COLLECTFAST_ENABLE = True
+    COLLECTFAST_ENABLED = True
     #static assets
 
     STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
